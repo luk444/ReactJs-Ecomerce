@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const todosProductos = async (state) => {
-const peticion = await axios.get('https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/Products/')   
+const peticion = await axios.get('http://localhost:5000/products/')   
 state(peticion.data.results)
 }
 
 const unicoProducto = async (id, state)=>{
-    const peticion = await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
+    const peticion = await axios.get(`http://localhost:5000/products/${id}`)
     state(peticion.data)
 }
 

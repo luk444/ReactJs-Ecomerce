@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { ItemList } from './ItemList';
 
 
-const Pc = () => {
+const Respaldos = () => {
   const [prods, setProds] = useState([]);
   useEffect(() => {
-    fetch('https://63c27ec1b0c286fbe5ee8771.mockapi.io/FinalJavaScript/Products/?Categoria=Pcs') //pido los datos
+    fetch('http://localhost:5000/products/?Categoria=Respaldos') //pido los datos
       .then((res) => res.json()) //lo traduzco
       .then((respuesta) => setProds(respuesta)) //los almacenamos
       .catch((error) => console.log(error));
@@ -15,6 +15,7 @@ const Pc = () => {
   return (
     <>
        <div className="container">
+       <h2>Productos</h2>
         <div className="btn-group">
           <Link to='/'>Volver al Home</Link> 
           <ItemList prods={prods} />
@@ -24,4 +25,4 @@ const Pc = () => {
   );
 };
 
-export default Pc
+export default Respaldos
